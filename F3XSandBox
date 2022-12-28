@@ -1,8 +1,8 @@
 --//settings
-getgenv().config = {
-    AntiCrash = false,
-}
-if config.AntiCrash == true then
+getgenv().AntiCrash = false
+
+
+if getgenv().AntiCrash == true then
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2603.48633, 2.96999911e+11, 1420.95654, 0.96061039, 8.98172914e-08, -0.27789861, -7.14185759e-08, 1, 7.63295205e-08, 0.27789861, -5.34758087e-08, 0.96061039)
 game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
 end
