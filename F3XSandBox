@@ -8,8 +8,8 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
 end
 
 game:GetService("RunService").Stepped:Connect(function()
-    --for a = 1, 300 do -- Synapse X Crash
-    for a = 1, 1 do
+    for a = 1, 300 do --(fast crash)
+    --for a = 1, 1 do --(slow crash)
         local b = {
             [1] = "Clone",
             [2] = {
