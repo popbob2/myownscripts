@@ -1,10 +1,24 @@
+if not game.Workspace:FindFirstChild("Part") then
+printconsole("bruh")
+local args = {
+    [1] = "CreatePart",
+    [2] = "Normal",
+    [3] = CFrame.new(-93.30662536621094, 1.2067153453826904, -82.3551025390625) * CFrame.Angles(-0, 0, -0),
+    [4] = workspace
+}
+
+game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Building Tools").SyncAPI.ServerEndpoint:InvokeServer(unpack(args))
+end
+if game.Workspace:FindFirstChild("Part") then
 --//settings
 getgenv().AntiCrash = false
 
 
 if getgenv().AntiCrash == true then
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2603.48633, 2.96999911e+11, 1420.95654, 0.96061039, 8.98172914e-08, -0.27789861, -7.14185759e-08, 1, 7.63295205e-08, 0.27789861, -5.34758087e-08, 0.96061039)
+wait(1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+printconsole("Debug: Anchored: true")
 end
 
 game:GetService("RunService").Stepped:Connect(function()
@@ -75,3 +89,4 @@ game:GetService("RunService").Stepped:Connect(function()
 end
 wait()
 end)
+end
