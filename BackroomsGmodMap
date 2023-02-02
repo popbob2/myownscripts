@@ -1,0 +1,183 @@
+local gui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local lightningbolt = Instance.new("TextButton")
+local fpscap = Instance.new("TextButton")
+local fastrespawn = Instance.new("TextButton")
+local stoptrippingme = Instance.new("TextButton")
+local stopcrashingmeanticheat = Instance.new("TextButton")
+
+gui.Name = "gui"
+gui.Parent = game:WaitForChild("CoreGui")
+gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+gui.ResetOnSpawn = false
+
+Frame.Parent = gui
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.Draggable = true
+Frame.Position = UDim2.new(0.732980371, 0, 0.293827176, 0)
+Frame.Size = UDim2.new(0, 321, 0, 278)
+
+lightningbolt.Name = "lightning bolt"
+lightningbolt.Parent = Frame
+lightningbolt.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+lightningbolt.Position = UDim2.new(0.031152647, 0, 0.133093521, 0)
+lightningbolt.Size = UDim2.new(0, 145, 0, 45)
+lightningbolt.Font = Enum.Font.SourceSans
+lightningbolt.Text = "lightning bolt"
+lightningbolt.TextColor3 = Color3.fromRGB(0, 0, 0)
+lightningbolt.TextScaled = true
+lightningbolt.TextSize = 14.000
+lightningbolt.TextWrapped = true
+
+fpscap.Name = "fpscap"
+fpscap.Parent = Frame
+fpscap.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+fpscap.Position = UDim2.new(0.510903418, 0, 0.133093521, 0)
+fpscap.Size = UDim2.new(0, 145, 0, 45)
+fpscap.Font = Enum.Font.SourceSans
+fpscap.Text = "disable fpscap"
+fpscap.TextColor3 = Color3.fromRGB(0, 0, 0)
+fpscap.TextScaled = true
+fpscap.TextSize = 14.000
+fpscap.TextWrapped = true
+
+fastrespawn.Name = "fastrespawn"
+fastrespawn.Parent = Frame
+fastrespawn.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+fastrespawn.Position = UDim2.new(0.0311526358, 0, 0.356115103, 0)
+fastrespawn.Size = UDim2.new(0, 145, 0, 45)
+fastrespawn.Font = Enum.Font.SourceSans
+fastrespawn.Text = "respawn"
+fastrespawn.TextColor3 = Color3.fromRGB(0, 0, 0)
+fastrespawn.TextScaled = true
+fastrespawn.TextSize = 14.000
+fastrespawn.TextWrapped = true
+
+stoptrippingme.Name = "stoptrippingme"
+stoptrippingme.Parent = Frame
+stoptrippingme.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+stoptrippingme.Position = UDim2.new(0.510903418, 0, 0.356115103, 0)
+stoptrippingme.Size = UDim2.new(0, 145, 0, 45)
+stoptrippingme.Font = Enum.Font.SourceSans
+stoptrippingme.Text = "anti trip"
+stoptrippingme.TextColor3 = Color3.fromRGB(0, 0, 0)
+stoptrippingme.TextScaled = true
+stoptrippingme.TextSize = 14.000
+stoptrippingme.TextWrapped = true
+
+stopcrashingmeanticheat.Name = "stopcrashingmeanticheat"
+stopcrashingmeanticheat.Parent = Frame
+stopcrashingmeanticheat.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+stopcrashingmeanticheat.Position = UDim2.new(0.0311526358, 0, 0.57913667, 0)
+stopcrashingmeanticheat.Size = UDim2.new(0, 145, 0, 45)
+stopcrashingmeanticheat.Visible = false
+stopcrashingmeanticheat.Font = Enum.Font.SourceSans
+stopcrashingmeanticheat.Text = "disable speed anticheat"
+stopcrashingmeanticheat.TextColor3 = Color3.fromRGB(0, 0, 0)
+stopcrashingmeanticheat.TextScaled = true
+stopcrashingmeanticheat.TextSize = 14.000
+stopcrashingmeanticheat.TextWrapped = true
+
+-- Scripts:
+
+local function TZGA_fake_script() -- lightningbolt.LocalScript 
+	local script = Instance.new('LocalScript', lightningbolt)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.UserId = 378685924
+		game.StarterGui:SetCore('SendNotification', {
+			Title = "DDLC",
+			Text = "✅ press L for the tool",
+			Duration = 10,
+			Icon = "rbxassetid://6453608321",
+		})
+	end)
+end
+coroutine.wrap(TZGA_fake_script)()
+local function RWKHNRV_fake_script() -- fpscap.LocalScript 
+	local script = Instance.new('LocalScript', fpscap)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		while true do
+			if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("FPSCap") then
+				game:GetService("Players").LocalPlayer.Backpack.FPSCap:Destroy()
+			end
+		wait(.5)	
+		end
+		game.StarterGui:SetCore('SendNotification', {
+			Title = "DDLC",
+			Text = "✅ fpscap script disabled",
+			Duration = 10,
+			Icon = "rbxassetid://6453608321",
+		})
+	end)
+end
+coroutine.wrap(RWKHNRV_fake_script)()
+local function ABZZT_fake_script() -- fastrespawn.LocalScript 
+	local script = Instance.new('LocalScript', fastrespawn)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		game:GetService("Players").LocalPlayer.PlayerGui.RemoteEvent:FireServer()
+	
+		game.StarterGui:SetCore('SendNotification', {
+			Title = "DDLC",
+			Text = "✅ respawned",
+			Duration = 10,
+			Icon = "rbxassetid://6453608321",
+		})
+	end)
+end
+coroutine.wrap(ABZZT_fake_script)()
+local function FLCN_fake_script() -- stoptrippingme.LocalScript 
+	local script = Instance.new('LocalScript', stoptrippingme)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		while true do 
+			if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Land") then
+			game:GetService("Players").LocalPlayer.Character.Land:Destroy()
+	
+			end
+		wait(.5)	
+		end
+	
+		game.StarterGui:SetCore('SendNotification', {
+			Title = "DDLC",
+			Text = "✅ land destroyed",
+			Duration = 10,
+			Icon = "rbxassetid://6453608321",
+		})
+	end)
+end
+coroutine.wrap(FLCN_fake_script)()
+local function VBNA_fake_script() -- stopcrashingmeanticheat.LocalScript 
+	local script = Instance.new('LocalScript', stopcrashingmeanticheat)
+
+	script.Parent.MouseButton1Click:Connect(
+		function()
+			while true do
+				if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Very-Noticeable Anti-Cheat LocalScript") then
+					game:GetService("Players").LocalPlayer.Character["Very-Noticeable Anti-Cheat LocalScript"]:Destroy()
+				end
+				wait()
+			end
+			game.StarterGui:SetCore(
+				"SendNotification",
+				{
+					Title = "DDLC",
+					Text = "✅ anticheat disabled",
+					Duration = 10,
+					Icon = "rbxassetid://6453608321",
+				}
+			)
+		end
+	)
+	
+end
+coroutine.wrap(VBNA_fake_script)()
+local function LZZV_fake_script() -- Frame.MoveFrame 
+	local script = Instance.new('LocalScript', Frame)
+
+	script.Parent.Active = true
+	script.Parent.Draggable = true 
+end
+coroutine.wrap(LZZV_fake_script)()
